@@ -22,9 +22,9 @@ struct AlarmRepeatCellView : View {
           .foregroundColor(Color.accentColor)
         }
       }
-      .tapAction(count: 1) {
+    .onTapGesture {
         self.toggle(self.index)
-      }
+    }
   }
   
   private func toggle(_ index: Int) {

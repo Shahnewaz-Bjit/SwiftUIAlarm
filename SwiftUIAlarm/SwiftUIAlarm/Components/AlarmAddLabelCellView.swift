@@ -12,7 +12,7 @@ struct AlarmAddLabelCellView : View {
   @Binding var label: String
   
   var body: some View {
-    NavigationButton(destination: AlarmLabelView(label: $label)){
+    NavigationLink(destination: AlarmLabelView(label: $label)){
       HStack {
         Text("Label")
         Spacer()

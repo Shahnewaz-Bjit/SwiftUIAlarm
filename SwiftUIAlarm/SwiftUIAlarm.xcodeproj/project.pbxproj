@@ -27,6 +27,7 @@
 		6FF92C9C22BBB19500AD5C8E /* Array+RepeatDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF92C9B22BBB19500AD5C8E /* Array+RepeatDay.swift */; };
 		6FF92C9F22BBB2B100AD5C8E /* AlarmRepeatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF92C9E22BBB2B100AD5C8E /* AlarmRepeatCellView.swift */; };
 		6FFFA8F522BB7F7600691BED /* RepeatDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFA8F422BB7F7600691BED /* RepeatDay.swift */; };
+		8978DF852D44C37E00A392F5 /* SwiftUIAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8978DF842D44C36C00A392F5 /* SwiftUIAlarm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		6FF92C9B22BBB19500AD5C8E /* Array+RepeatDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RepeatDay.swift"; sourceTree = "<group>"; };
 		6FF92C9E22BBB2B100AD5C8E /* AlarmRepeatCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmRepeatCellView.swift; sourceTree = "<group>"; };
 		6FFFA8F422BB7F7600691BED /* RepeatDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDay.swift; sourceTree = "<group>"; };
+		8978DF842D44C36C00A392F5 /* SwiftUIAlarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAlarm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				6F74C98622B37B2B00362250 /* Views */,
 				6FF92C9A22BBB18400AD5C8E /* Utils */,
 				6F74C96322B37AC200362250 /* AppDelegate.swift */,
+				8978DF842D44C36C00A392F5 /* SwiftUIAlarm.swift */,
 				6F74C96522B37AC200362250 /* SceneDelegate.swift */,
 				6F74C96922B37AC400362250 /* Assets.xcassets */,
 				6F74C96E22B37AC400362250 /* LaunchScreen.storyboard */,
@@ -309,6 +312,7 @@
 				6F74C98A22B37B9200362250 /* AlarmView.swift in Sources */,
 				6F74C98C22B37E5600362250 /* AlarmData.swift in Sources */,
 				6F74C96822B37AC200362250 /* AlarmListView.swift in Sources */,
+				8978DF852D44C37E00A392F5 /* SwiftUIAlarm.swift in Sources */,
 				6F52433122BA628600C80EA4 /* AlarmAddView.swift in Sources */,
 				6F74C98822B37B3D00362250 /* Alarm.swift in Sources */,
 			);
@@ -467,6 +471,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUIAlarm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,6 +493,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUIAlarm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

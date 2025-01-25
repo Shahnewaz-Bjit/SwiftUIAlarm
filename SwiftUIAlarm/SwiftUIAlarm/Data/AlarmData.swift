@@ -9,13 +9,6 @@
 import Combine
 import SwiftUI
 
-final class AlarmData: BindableObject {
-  let didChange = PassthroughSubject<AlarmData, Never>()
-  
-  @UserDefaultAlarm(key: "Alarms", defaultValue: Alarm.defaultAlarm)
-  var alarms: [Alarm] {
-    didSet {
-      didChange.send(self)
-    }
-  }
+final class AlarmData: ObservableObject {
+  @Published var alarms: [Alarm] = UserDefaultAlarm(key: "Alarms", defaultValue: Alarm.defaultAlarm).wrappedValue
 }

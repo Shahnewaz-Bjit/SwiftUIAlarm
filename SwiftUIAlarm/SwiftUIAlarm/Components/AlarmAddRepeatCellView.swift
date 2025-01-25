@@ -12,11 +12,11 @@ struct AlarmAddRepeatCellView : View {
   @Binding var repeatDay: [RepeatDay]
   
   var body: some View {
-    NavigationButton(destination: AlarmRepeatView(repeatDay: $repeatDay)){
+    NavigationLink(destination: AlarmRepeatView(repeatDay: $repeatDay)){
       HStack {
         Text("Repeat")
         Spacer()
-        if $repeatDay.count == 0 {
+        if repeatDay.isEmpty {
           Text("Never")
         } else {
           Text(repeatDay.repeats)

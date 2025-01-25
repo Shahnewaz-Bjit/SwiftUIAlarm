@@ -12,7 +12,7 @@ struct AlarmLabelView : View {
   @Binding var label: String
   
   var body: some View {
-    TextField($label)
+    Text(label)
       .textFieldStyle(.roundedBorder)
       .navigationBarTitle(Text("Label"), displayMode: .inline)
   }

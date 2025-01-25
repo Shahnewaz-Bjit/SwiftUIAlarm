@@ -20,10 +20,11 @@ struct AlarmListView : View {
       }
       .navigationBarTitle(Text("Alarm"))
       .navigationBarItems(
-        trailing:PresentationButton(
-          Image(systemName: "plus"),
+        trailing: NavigationLink(
           destination: AlarmAddView().environmentObject(self.alarmData)
-        )
+        ) {
+          Image(systemName: "plus")
+        }
       )
     }
   }
