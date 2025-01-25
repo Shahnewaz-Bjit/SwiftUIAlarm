@@ -9,23 +9,33 @@
 import SwiftUI
 
 struct AlarmListView : View {
-  @EnvironmentObject var alarmData: AlarmData
-  
-  var body: some View {
-    NavigationView {
-      List {
-        ForEach(self.alarmData.alarms) { alarm in
-          AlarmView(alarm: alarm)
+    @EnvironmentObject var alarmData: AlarmData
+    @State var alarmList: [Alarm]
+    
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(alarmList) { alarm in
+                    AlarmView(alarmList: alarmList, alarm: alarm)
+                }
+                .onDelete(perform: deleteAlarm)
+            }
+            .navigationBarTitle(Text("Alarm"))
+            .navigationBarItems(
+                trailing: NavigationLink(
+                    destination: AlarmAddView(alarmList: $alarmList).environmentObject(self.alarmData)
+                ) {
+                    Image(systemName: "plus")
+                }
+            )
         }
-      }
-      .navigationBarTitle(Text("Alarm"))
-      .navigationBarItems(
-        trailing: NavigationLink(
-          destination: AlarmAddView().environmentObject(self.alarmData)
-        ) {
-          Image(systemName: "plus")
+        .onAppear() {
+            alarmList = alarmData.alarms
         }
-      )
     }
-  }
+    
+    func deleteAlarm(at offsets: IndexSet) {
+        alarmData.alarms.remove(atOffsets: offsets)
+        alarmList = alarmData.alarms
+    }
 }

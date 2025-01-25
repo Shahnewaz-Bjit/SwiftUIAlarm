@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct AlarmView : View {
-  @EnvironmentObject var alarmData: AlarmData
+    @State var alarmList: [Alarm]
   let alarm: Alarm
   
   var alarmIndex: Int {
-    alarmData.alarms.firstIndex(where: { $0.id == alarm.id})!
+      alarmList.firstIndex(where: { $0.id == alarm.id})!
   }
   
   let timeFormat: DateFormatter = {
@@ -29,7 +29,7 @@ struct AlarmView : View {
   }()
   
   var body: some View {
-    Toggle(isOn: $alarmData.alarms[alarmIndex].isActive) {
+      Toggle(isOn: $alarmList[alarmIndex].isActive) {
       VStack(alignment: .leading, spacing: 0) {
           Text("\(self.alarm.date, formatter: self.timeFormat)")
             .font(.system(size: 40))
