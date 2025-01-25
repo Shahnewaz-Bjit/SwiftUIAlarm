@@ -17,6 +17,7 @@ struct AlarmAddView : View {
     @State var label: String = "Alarm"
     @State var isSnoozed: Bool = true
     @Binding var alarmList: [Alarm]
+    @State var alarmToEdit: Alarm? = nil
     
     var body: some View {
         NavigationView {
@@ -38,6 +39,14 @@ struct AlarmAddView : View {
                     Text("Save")
                 }
             )
+            .onAppear {
+                if let alarm = alarmToEdit {
+                    date = alarm.date
+                    repeatDay = alarm.repeatDay.map { RepeatDay(rawValue: $0) ?? .monday } // Convert [Int] to [RepeatDay]
+                    label = alarm.label
+                    isSnoozed = alarm.isSnooze
+                }
+            }
         }
     }
     
@@ -46,6 +55,10 @@ struct AlarmAddView : View {
     }
     
     private func createAlarm() {
+        if let alarm = alarmToEdit {
+            let index = alarmList.firstIndex(where: { $0.id == alarm.id})!
+            alarmData.alarms.remove(at: index)
+        }
         let newAlarm = Alarm(
             date: date,
             label: label,
